@@ -1,20 +1,9 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  experimental: {
-    agentFeedback: true,
-  },
-  cacheComponents: true,
-  partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
-  },
+  // این خط به Next.js می‌گوید که فقط به پوشه front نگاه کند
+  outputFileTracingRoot: path.join(process.cwd()),
 };
 
 export default nextConfig;
